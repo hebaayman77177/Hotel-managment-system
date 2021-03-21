@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "fa4e2a19328e3fa9dea3630b9dc41eda",
+=======
+    "content-hash": "4a16c3c541bd99241cab1c21ce8e83ac",
+>>>>>>> c30de666f3188c1d78b44d7c817e4ba26f5b2a25
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -460,6 +464,7 @@
             "time": "2020-12-29T14:50:06+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "ezyang/htmlpurifier",
             "version": "v4.13.0",
             "source": {
@@ -514,6 +519,8 @@
             "time": "2020-06-29T00:56:53+00:00"
         },
         {
+=======
+>>>>>>> c30de666f3188c1d78b44d7c817e4ba26f5b2a25
             "name": "fideloper/proxy",
             "version": "4.4.1",
             "source": {
@@ -1183,6 +1190,7 @@
             "time": "2021-03-02T16:53:12+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "laravel/ui",
             "version": "v3.2.0",
             "source": {
@@ -1241,6 +1249,8 @@
             "time": "2021-01-06T19:20:22+00:00"
         },
         {
+=======
+>>>>>>> c30de666f3188c1d78b44d7c817e4ba26f5b2a25
             "name": "league/commonmark",
             "version": "1.5.7",
             "source": {
@@ -1493,6 +1503,7 @@
             "time": "2021-01-18T20:58:21+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "livewire/livewire",
             "version": "v2.4.0",
             "source": {
@@ -1950,6 +1961,8 @@
             "time": "2020-11-16T12:02:40+00:00"
         },
         {
+=======
+>>>>>>> c30de666f3188c1d78b44d7c817e4ba26f5b2a25
             "name": "monolog/monolog",
             "version": "2.2.0",
             "source": {
@@ -2046,6 +2059,7 @@
             "time": "2020-12-14T13:15:25+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "myclabs/php-enum",
             "version": "1.8.0",
             "source": {
@@ -2106,6 +2120,8 @@
             "time": "2021-02-15T16:11:48+00:00"
         },
         {
+=======
+>>>>>>> c30de666f3188c1d78b44d7c817e4ba26f5b2a25
             "name": "nesbot/carbon",
             "version": "2.46.0",
             "source": {
@@ -2320,6 +2336,7 @@
             "time": "2020-11-07T02:01:34+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "phpoffice/phpspreadsheet",
             "version": "1.16.0",
             "source": {
@@ -2421,6 +2438,8 @@
             "time": "2020-12-31T18:03:49+00:00"
         },
         {
+=======
+>>>>>>> c30de666f3188c1d78b44d7c817e4ba26f5b2a25
             "name": "phpoption/phpoption",
             "version": "1.7.5",
             "source": {
@@ -2640,6 +2659,7 @@
             "time": "2020-06-29T06:28:15+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "psr/http-factory",
             "version": "1.0.1",
             "source": {
@@ -2695,6 +2715,8 @@
             "time": "2019-04-30T12:38:16+00:00"
         },
         {
+=======
+>>>>>>> c30de666f3188c1d78b44d7c817e4ba26f5b2a25
             "name": "psr/http-message",
             "version": "1.0.1",
             "source": {
