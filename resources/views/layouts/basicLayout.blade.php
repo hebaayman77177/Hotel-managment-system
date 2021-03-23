@@ -821,7 +821,7 @@
             </section>
             <!-- /.content -->
         </div>
-dddddddddddddddddddddddddddddddddd
+
         @yield('content')
 
         <!-- /.content-wrapper -->
@@ -841,6 +841,14 @@ dddddddddddddddddddddddddddddddddd
     </div>
     <!-- ./wrapper -->
 
+    {{-- data tables --}}
+    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script> --}} --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
     {{-- data tables --}}
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.jss"></script>
@@ -879,9 +887,13 @@ dddddddddddddddddddddddddddddddddd
     <script src="dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
-    {{-- data tables --}}
-    <script src="{{ mix('js/app.js') }}"></script> --}}
-    <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script> --}}
+    {{-- datatables --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+
     @stack('scripts')
 </body>
 
