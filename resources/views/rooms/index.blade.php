@@ -3,12 +3,12 @@
  @section('content')
      <h1>hello</h1>
      hiiiiiiiiiiiiii
-     {!! $dataTable->table() !!}
+     {!! $html->table() !!}
      byeeeeeeeeeee
  @endsection
 
  @push('scripts')
-     {!! $dataTable->scripts() !!}
+     {!! $html->scripts() !!}
  @endpush
 
 
