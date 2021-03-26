@@ -2,9 +2,7 @@
 
  @section('content')
      <h1>hello</h1>
-     hiiiiiiiiiiiiii
      {!! $html->table() !!}
-     byeeeeeeeeeee
  @endsection
 
  @push('scripts')
