@@ -80,12 +80,6 @@ class LoginController extends Controller
         }
         return back()->withInput($request->only('email', 'remember'));
     }
-
-    public function showEmployeeLoginForm()
-    {
-        return view('auth.login', ['url' => 'employee']);
-    }
-
     public function employeeLogin(Request $request)
     {
         $this->validate($request, [
@@ -98,5 +92,9 @@ class LoginController extends Controller
             return redirect()->intended('/employee');
         }
         return back()->withInput($request->only('email', 'remember'));
+    }
+    public function showEmployeeLoginForm()
+    {
+        return view('auth.login', ['url' => 'employee']);
     }
 }

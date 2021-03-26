@@ -22,7 +22,7 @@ class PaymentController extends Controller
         //check that accompany number is less than room capacity
         $room = Room::where('number', $request->room_number)->get();
         if ($room->capacity < $request->accompany_number) {
-            // return redirect()->route('rooms.index');
+            return "accompany number is less than room capacity";
         }
 
         // dd($request->amount);
@@ -34,13 +34,14 @@ class PaymentController extends Controller
             'source' => $request->stripeToken,
             'receipt_email' => "admin@email.com",
         ]);
-
+        dd($transactionResponse->status);
         if ($transactionResponse->status === "succeeded") {
             //logic for saving in db
             Reservation::create($validatedData);
-                // return redirect()->route('rooms.index');
+            // return redirect()->route('rooms.index');
         }
-        return redirect()->route('rooms.index');
+        // return redirect()->route('rooms.index');
+        return "succeeded";
     }
 
     public function create(Request $request)

@@ -39,6 +39,7 @@ Route::get('/register/employee', [RegisterController::class, 'showEmployeeRegist
 Route::get('/login/employee', [LoginController::class, 'showEmployeeLoginForm']);
 Route::post('/login/employee', [LoginController::class, 'employeeLogin']);
 
+
 Route::group(['middleware' => 'auth:employee'], function () {
     Route::view('/employee', 'employee');
 });
@@ -56,7 +57,7 @@ Route::post('reservations/payment/create', [PaymentController::class, 'create'])
 Route::post('reservations/payment/store/', [PaymentController::class, 'store'])->name('payments.store');
 Route::get('clients/{client}/reservations/', [ReservationController::class, 'getReservations'])->name('clientreservations.index');
 
-Route::get('logout', [LoginController::class,'logout']);
+Route::get('logout', [LoginController::class,'logout'])->name('logout');
 
 // Route::get('/users', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

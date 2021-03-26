@@ -1,4 +1,4 @@
 @extends('layouts.app')
 @section('content')
-hi from client
+    hi from admin
 @endsection

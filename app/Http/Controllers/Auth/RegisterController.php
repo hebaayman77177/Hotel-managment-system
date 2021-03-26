@@ -62,6 +62,13 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
+    protected function adminValidator(array $data)
+    {
+        return Validator::make($data, [
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+    }
 
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -112,9 +119,8 @@ class RegisterController extends Controller
      */
     protected function createAdmin(Request $request)
     {
-        $this->validator($request->all())->validate();
+        $this->adminValidator($request->all())->validate();
         Admin::create([
-            'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
