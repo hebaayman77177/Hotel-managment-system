@@ -1,3 +1,4 @@
+
 {
     "private": true,
     "scripts": {
@@ -11,7 +12,6 @@
     },
     "devDependencies": {
         "axios": "^0.21",
-<<<<<<< HEAD
         "bootstrap": "^4.0.0",
         "jquery": "^3.2",
         "laravel-mix": "^6.0.6",
@@ -23,10 +23,5 @@
         "sass-loader": "^8.0.0",
         "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"
-=======
-        "laravel-mix": "^6.0.6",
-        "lodash": "^4.17.19",
-        "postcss": "^8.1.14"
->>>>>>> c30de666f3188c1d78b44d7c817e4ba26f5b2a25
     }
 }

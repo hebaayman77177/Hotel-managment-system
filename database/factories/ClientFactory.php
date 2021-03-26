@@ -33,7 +33,7 @@ class ClientFactory extends Factory
             'password'          => $this->faker->numerify('###-###-####'),
             'is_approved'       => $this->faker->boolean(),
             'updated_at'        => $this->faker->date($format = 'Y-m-d', $max = 'now'),
-            'deleted_at'        => $this->faker->date($format = 'Y-m-d', $max = 'now'),
+            'deleted_at'        => null,
             'created_at'        => $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'id'                => $this->faker->unique(false, 1500)->numberBetween(1, 1000),
             'avatar_img'        => $this->faker->image('public/storage',400,300,'Client') 

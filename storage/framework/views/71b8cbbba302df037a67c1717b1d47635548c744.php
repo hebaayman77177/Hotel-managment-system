@@ -1,0 +1,1 @@
+<?php /**PATH /opt/lampp/htdocs/HotelMS/resources/views/receptionist/update.blade.php ENDPATH**/ ?>

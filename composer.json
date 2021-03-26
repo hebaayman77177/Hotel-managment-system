@@ -13,19 +13,19 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
-<<<<<<< HEAD
+        "laravel/legacy-factories": "^1.1",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.2",
         "livewire/livewire": "^2.4",
-        "mediconesystems/livewire-datatables": "^0.4.3"
-=======
-        "laravel/tinker": "^2.5"
->>>>>>> c30de666f3188c1d78b44d7c817e4ba26f5b2a25
+        "mediconesystems/livewire-datatables": "^0.4.3",
+        "yajra/laravel-datatables": "^1.5",
+        "yajra/laravel-datatables-html": "^4.0",
+        "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
+        "laravel/ui": "^3.2",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
         "phpunit/phpunit": "^9.3.3"

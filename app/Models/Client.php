@@ -1,12 +1,17 @@
 <?php
 
-namespace App/Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 
 class Client extends Model 
 {
+
+    use HasFactory, Notifiable;
 
     protected $table = 'clients';
     public $timestamps = true;

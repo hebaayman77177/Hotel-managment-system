@@ -26,9 +26,11 @@
   <link rel="stylesheet" href="{{asset('admin/plugins/summernote/summernote-bs4.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-</head>
+  {{-- DataTables Style --}}
+  <link href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css" rel="stylesheet"></head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
+
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -53,6 +55,7 @@
           <button class="btn btn-navbar" type="submit">
             <i class="fas fa-search"></i>
           </button>
+          
         </div>
       </div>
     </form>
@@ -189,14 +192,15 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="/receptionist/show" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 My Approved Clients
               </p>
-            </a></li>
+            </a>
+          </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="/receptionist/reservedClients" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Clients Reservations
@@ -233,7 +237,16 @@
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
+{{-- data tables --}}
+    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ asset('vendor/datatables/buttons.server-side.js') }}"></script> --}} --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    {{-- data tables --}}
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 <!-- jQuery -->
 <script src="{{asset('admin/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -268,5 +281,21 @@
 <script src="{{asset('admin/dist/js/pages/dashboard.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('admin/dist/js/demo.js')}}"></script>
+{{-- datatables --}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+ <script>
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+ </script>
+@stack('js')
+
+
 </body>
 </html>

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controller\ReceptionistController;
+use Yajra\DataTables\Html\Builder;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,17 +16,47 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-<<<<<<< HEAD
-    return view('adminLt.dashborad');
-    // return view('welcome');
-});
+
+// ************************* Receptionist Routes *************************** //
+Route::get('/receptionist', 'App\Http\Controllers\ReceptionistController@greeting')->name('receptionist.greeting');
+
+Route::get('/receptionist/index', 'App\Http\Controllers\ReceptionistController@index')->name('receptionist.index');
+
+Route::get('/receptionist/update', 'App\Http\Controllers\ReceptionistController@update')->name('receptionist.update');
+
+Route::get('/receptionist/show', 'App\Http\Controllers\ReceptionistController@show')->name('receptionist.show');
+
+Route::get('/receptionist/reservedClients', 'App\Http\Controllers\ReceptionistController@reservedClients')->name('receptionist.reservedClients');
+
+Route::get('clients/{id}/approve', 'App\Http\Controllers\ReceptionistController@approveClient')->name('client.approve');
 
 
 
 
-// Route::get('/users', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-=======
-    return view('welcome');
-});
->>>>>>> c30de666f3188c1d78b44d7c817e4ba26f5b2a25
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/users', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
