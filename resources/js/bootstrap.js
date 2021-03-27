@@ -38,4 +38,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     key: process.env.MIX_PUSHER_APP_KEY,
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
+<<<<<<< HEAD
 // });
+=======
+// });
+>>>>>>> 070b939c3290b4442cbda630b164684e938d646b

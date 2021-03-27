@@ -40,11 +40,16 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+<<<<<<< HEAD
+=======
+
+>>>>>>> 070b939c3290b4442cbda630b164684e938d646b
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
             'hash' => false,
         ],
+<<<<<<< HEAD
         'client' => [
             'driver' => 'session',
             'provider' => 'clients',
@@ -59,6 +64,8 @@ return [
             'driver' => 'session',
             'provider' => 'employees',
         ],
+=======
+>>>>>>> 070b939c3290b4442cbda630b164684e938d646b
     ],
 
     /*
@@ -84,6 +91,7 @@ return [
             'model' => App\Models\User::class,
         ],
 
+<<<<<<< HEAD
         'employees' => [
             'driver' => 'database',
             'table' => 'employees',
@@ -97,6 +105,12 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Client::class,
         ],
+=======
+        // 'users' => [
+        //     'driver' => 'database',
+        //     'table' => 'users',
+        // ],
+>>>>>>> 070b939c3290b4442cbda630b164684e938d646b
     ],
 
     /*

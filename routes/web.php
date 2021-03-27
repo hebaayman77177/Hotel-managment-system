@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 use Illuminate\Support\Facades\Route;
 
@@ -10,6 +11,11 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controller\ReceptionistController;
 use Yajra\DataTables\Html\Builder;
 
+=======
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoomController;
+use App\Http\Controllers\manager\recepmanagecontroller;
+>>>>>>> 070b939c3290b4442cbda630b164684e938d646b
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +32,7 @@ use Yajra\DataTables\Html\Builder;
 //     return view('adminLt.dashborad');
 //     // return view('welcome');
 // });
+<<<<<<< HEAD
 
 Route::view('/', 'welcome');
 
@@ -97,3 +104,47 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+=======
+Route::get('/', function () {
+    return view('/welcome');
+});
+
+Auth::routes();
+// Route::get('/managerecep',  [recepmanagecontroller::class, 'index'])->name('managerecep');
+Route::group(['middleware' => ['isEmployee']],function(){
+    Route::get('/managerecep',  [recepmanagecontroller::class, 'index'])->name('managerecep');
+});
+Route::get('/managerecep/create', [recepmanagecontroller::class, 'create'])->name('managerecep.create');
+Route::get('/managerecep/{id}', [recepmanagecontroller::class, 'show'])->name('managerecep.show');  
+Route::post('/managerecep',[recepmanagecontroller::class,'store'])->name('managerecep.store');
+Route::delete('/managerecep/{id}', [recepmanagecontroller::class, 'destroy'])->name('managerecep.destroy');  
+Route::get('/managerecep/{id}/edit', [recepmanagecontroller::class, 'edit'])->name('managerecep.edit');  
+Route::put('managerecep/{id}',[recepmanagecontroller::class,'update'])->name('managerecep.update');
+
+
+// if(Auth::employee())
+// Route::get('/managerecep',  [recepmanagecontroller::class, 'index'])->name('managerecep');
+// @else
+// <p> please log in as manager </p>
+// @endif
+
+//Route::get('/manageroom',  [roommanagecontroller::class, 'index'])->name('manageroom');
+//Route::get('/managefloor',  [floormanagecontroller::class, 'index'])->name('managefloor');
+
+// Route::get('/managefloor', function () {
+//     return view('manage.floormanager.index');
+// })->name('managefloor');
+
+
+// Route::get('/manageroom', function () {
+//     return view('manage.roommanager.index');
+    
+// })->name('manageroom');
+
+
+Route::get('rooms', [RoomController::class, 'index'])->name('rooms.index');
+
+
+
+// Route::get('/users', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+>>>>>>> 070b939c3290b4442cbda630b164684e938d646b
