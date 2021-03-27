@@ -26,11 +26,11 @@ class Client extends Authenticatable
 
     public function approvedReceptionist()
     {
-    return $this->belongsTo('App/Models\Employee', 'id');
+    return $this->belongsTo('App\Models\Employee', 'id');
     }
 
     public function reservations()
     {
-        return $this->hasMany('App/Models\Reservation', 'id');
+        return $this->hasMany('App\Models\Reservation', 'id');
     }
 }

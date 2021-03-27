@@ -68,7 +68,7 @@ Route::group(['middleware' => 'auth:employee'], function () {
 
     Route::get('/receptionist/update', 'App\Http\Controllers\ReceptionistController@update')->name('receptionist.update');
 
-    Route::get('/receptionist/show', 'App\Http\Controllers\ReceptionistController@show')->name('receptionist.show');
+    Route::get('/receptionist/clients/show', 'App\Http\Controllers\ReceptionistController@show')->name('receptionist.show');
 
     Route::get('/receptionist/reservedClients', 'App\Http\Controllers\ReceptionistController@reservedClients')->name('receptionist.reservedClients');
 

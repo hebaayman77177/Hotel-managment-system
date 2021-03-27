@@ -48,19 +48,22 @@ class ReceptionistController extends Controller
     //​ Show  Reservations  Data For Each Client
     public function show(Request $request, Builder $builder)
     {
-        $students = \DB::table('reservations')
-            ->select(
-                'room_number',
-                'accompany_number',
-                'paid_price',
-                'country',
-                'gender',
-                'clients.name'
-            )->join('clients', 'reservations.client_id', '=', 'client.id')
-            ->where(['clients.receptionist_id', '=', '$request.receptionist']);
+        $receptionistId = auth()->user()->id;
+        $clients = Client::where('receptionist_id', $receptionistId)->reservations();
+        dd($clients);
+        // $students = \DB::table('reservations')
+        //     ->select(
+        //         'room_number',
+        //         'accompany_number',
+        //         'paid_price',
+        //         'country',
+        //         'gender',
+        //         'clients.name'
+        //     )->join('clients', 'reservations.client_id', '=', 'client.id')
+        //     ->where(['clients.receptionist_id', '=', '$request.receptionist']);
 
         if (request()->ajax()) {
-            return DataTables::of($students)->toJson();
+            return DataTables::of($clients)->toJson();
         }
 
         $html = $builder->columns([
@@ -74,14 +77,12 @@ class ReceptionistController extends Controller
 
         return view('receptionist.show', compact('html'));
     }
-
-
     //Reservation Client
     public function reservedClients(Builder $builder)
     {
         $receptionistId = auth()->user()->id;
-        $reservedClients = Client::where('receptionist_id',$receptionistId);
-        
+        $reservedClients = Client::where('receptionist_id', $receptionistId);
+
 
         if (request()->ajax()) {
             return DataTables::of($reservedClients)->toJson();
@@ -96,10 +97,6 @@ class ReceptionistController extends Controller
 
         return view('receptionist.reservedClients', compact('html'));
     }
-
-
-
-
     //Receptionist Approve Client
     public function approveClient($id)
     {

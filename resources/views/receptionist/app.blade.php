@@ -90,7 +90,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="/receptionist/reservedClients" class="nav-link">
+            <a href={{route('receptionist.show')}} class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Clients Reservations
