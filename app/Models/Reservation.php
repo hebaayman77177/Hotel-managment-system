@@ -8,12 +8,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Reservation extends Model
 {
+
+
+    protected $fillable = array('room_number','is_approved','room_number', 'paid_price', 'accompany_number', 'room_number', 'client_id');
     use HasFactory, SoftDeletes;
     protected $table = 'reservations';
     public $timestamps = true;
     protected $dates = ['deleted_at'];
-
-    protected $fillable = array('is_approved', 'paid_price', 'accompany_number', 'room_number', 'client_id');
 
     public function client()
     {

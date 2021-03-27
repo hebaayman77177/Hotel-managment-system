@@ -43,10 +43,12 @@ class PaymentController extends Controller
             $reservation->client_id = $clientId;
             $reservation->paid_price = $request->amount;
             $reservation->accompany_number = $request->accompany_number;
+            $reservation->room_number = $request->room_number;
             // $reservation->room_number = $request->room_number;
             $reservation->save();
 
             //logic for saving in db
+        
             Reservation::create($request->all());
             // return redirect()->route('rooms.index');
         }
