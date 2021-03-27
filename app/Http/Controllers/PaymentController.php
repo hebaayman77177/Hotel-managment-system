@@ -44,6 +44,7 @@ class PaymentController extends Controller
             $reservation->paid_price = $request->amount;
             $reservation->accompany_number = $request->accompany_number;
             $reservation->room_number = $request->room_number;
+            // dd($reservation->room_number);
             // $reservation->room_number = $request->room_number;
             $reservation->save();
 
@@ -53,7 +54,7 @@ class PaymentController extends Controller
             // return redirect()->route('rooms.index');
         }
         // return redirect(clientreservations.index)->route('rooms.index');
-        return redirect()->route('clientreservations.index', ['roomId' => $clientId]);
+        return redirect()->route('clientreservations.index', ['client' => $clientId]);
     }
 
     public function create(Request $request)

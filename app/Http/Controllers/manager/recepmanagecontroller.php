@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\manager;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -53,6 +54,7 @@ class recepmanagecontroller extends Controller
         'name' => $request['name'],
         'email' =>$request['email'],
         'password' =>$request['password'],
+        'is_banned' =>$request['is_banned']
     ]);
     return view('manage.recepmanager.index',[
         'employees' => Employee::all(),

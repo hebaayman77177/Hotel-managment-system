@@ -76,6 +76,16 @@ Route::group(['middleware' => 'auth:employee'], function () {
     Route::get('/receptionist/reservedClients', 'App\Http\Controllers\ReceptionistController@reservedClients')->name('receptionist.reservedClients');
 
     Route::get('/receptionist/clients/{id}/approve', 'App\Http\Controllers\ReceptionistController@approveClient')->name('client.approve');
+   
+   
+    Route::get('/managerecep',  [recepmanagecontroller::class, 'index'])->name('managerecep');
+    // });
+    Route::get('/managerecep/create', [recepmanagecontroller::class, 'create'])->name('managerecep.create');
+    Route::get('/managerecep/{id}', [recepmanagecontroller::class, 'show'])->name('managerecep.show');
+    Route::post('/managerecep', [recepmanagecontroller::class, 'store'])->name('managerecep.store');
+    Route::delete('/managerecep/{id}', [recepmanagecontroller::class, 'destroy'])->name('managerecep.destroy');
+    Route::get('/managerecep/{id}/edit', [recepmanagecontroller::class, 'edit'])->name('managerecep.edit');
+    Route::put('managerecep/{id}', [recepmanagecontroller::class, 'update'])->name('managerecep.update');
 });
 // Route::get('clients/{id}/approve', 'App\Http\Controllers\ReceptionistController@approveClient')->name('client.approve');
 
@@ -108,14 +118,7 @@ Route::get('/', function () {
 Auth::routes();
 // Route::get('/managerecep',  [recepmanagecontroller::class, 'index'])->name('managerecep');
 // Route::group(['middleware' => ['isEmployee']],function(){
-    Route::get('/managerecep',  [recepmanagecontroller::class, 'index'])->name('managerecep');
-// });
-Route::get('/managerecep/create', [recepmanagecontroller::class, 'create'])->name('managerecep.create');
-Route::get('/managerecep/{id}', [recepmanagecontroller::class, 'show'])->name('managerecep.show');  
-Route::post('/managerecep',[recepmanagecontroller::class,'store'])->name('managerecep.store');
-Route::delete('/managerecep/{id}', [recepmanagecontroller::class, 'destroy'])->name('managerecep.destroy');  
-Route::get('/managerecep/{id}/edit', [recepmanagecontroller::class, 'edit'])->name('managerecep.edit');  
-Route::put('managerecep/{id}',[recepmanagecontroller::class,'update'])->name('managerecep.update');
+
 
 
 // if(Auth::employee())
@@ -134,7 +137,6 @@ Route::get('/managefloor', function () {
 
 Route::get('/manageroom', function () {
     return view('manage.roommanager.index');
-    
 })->name('manageroom');
 
 
