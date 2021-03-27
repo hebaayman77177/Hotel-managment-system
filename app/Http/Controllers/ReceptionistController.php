@@ -80,17 +80,11 @@ class ReceptionistController extends Controller
     public function reservedClients(Builder $builder)
     {
         $receptionistId = auth()->user()->id;
-        $students = \DB::table('clients')
-            ->select(
-                'name',
-                'email',
-                'mobile',
-                'country',
-                'gender'
-            )->where(['receptionist_id', '=', $receptionistId]);
+        $reservedClients = Client::where('receptionist_id',$receptionistId);
+        
 
         if (request()->ajax()) {
-            return DataTables::of($students)->toJson();
+            return DataTables::of($reservedClients)->toJson();
         }
         $html = $builder->columns([
             ['data' => 'name', 'name' => 'clients.name', 'title' => 'Name'],
