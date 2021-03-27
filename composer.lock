@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "content-hash": "26207bc480720a78d2ad9e7b5a55d809",
+
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1240,6 +1241,78 @@
                 "source": "https://github.com/laravel/tinker/tree/v2.6.1"
             },
             "time": "2021-03-02T16:53:12+00:00"
+        },
+        {
+            "name": "laravelcollective/html",
+            "version": "v6.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "ae15b9c4bf918ec3a78f092b8555551dd693fde3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/ae15b9c4bf918ec3a78f092b8555551dd693fde3",
+                "reference": "ae15b9c4bf918ec3a78f092b8555551dd693fde3",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^6.0|^7.0|^8.0",
+                "illuminate/routing": "^6.0|^7.0|^8.0",
+                "illuminate/session": "^6.0|^7.0|^8.0",
+                "illuminate/support": "^6.0|^7.0|^8.0",
+                "illuminate/view": "^6.0|^7.0|^8.0",
+                "php": ">=7.2.5"
+            },
+            "require-dev": {
+                "illuminate/database": "^6.0|^7.0|^8.0",
+                "mockery/mockery": "~1.0",
+                "phpunit/phpunit": "~8.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Collective\\Html\\HtmlServiceProvider"
+                    ],
+                    "aliases": {
+                        "Form": "Collective\\Html\\FormFacade",
+                        "Html": "Collective\\Html\\HtmlFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                },
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "HTML and Form Builders for the Laravel Framework",
+            "homepage": "https://laravelcollective.com",
+            "support": {
+                "issues": "https://github.com/LaravelCollective/html/issues",
+                "source": "https://github.com/LaravelCollective/html"
+            },
+            "time": "2020-12-15T20:20:05+00:00"
         },
         {
             "name": "laravelcollective/html",
@@ -6132,6 +6205,7 @@
         },
         {
             "name": "yajra/laravel-datatables-oracle",
+<<<<<<< HEAD
             "version": "v9.17.1",
             "source": {
                 "type": "git",
@@ -6142,6 +6216,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/53b3f8532b5021ffda813a8a54ecca121834ddb7",
                 "reference": "53b3f8532b5021ffda813a8a54ecca121834ddb7",
+=======
+            "version": "v9.17.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yajra/laravel-datatables.git",
+                "reference": "4779bcbb13d1ecad3cd2190999e19cb74798dbdd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/4779bcbb13d1ecad3cd2190999e19cb74798dbdd",
+                "reference": "4779bcbb13d1ecad3cd2190999e19cb74798dbdd",
+>>>>>>> origin/Feature/client
                 "shasum": ""
             },
             "require": {
@@ -6201,7 +6287,11 @@
             ],
             "support": {
                 "issues": "https://github.com/yajra/laravel-datatables/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/yajra/laravel-datatables/tree/v9.17.1"
+=======
+                "source": "https://github.com/yajra/laravel-datatables/tree/v9.17.0"
+>>>>>>> origin/Feature/client
             },
             "funding": [
                 {
@@ -6213,7 +6303,11 @@
                     "type": "patreon"
                 }
             ],
+<<<<<<< HEAD
             "time": "2021-03-23T01:32:51+00:00"
+=======
+            "time": "2021-03-19T09:13:50+00:00"
+>>>>>>> origin/Feature/client
         }
     ],
     "packages-dev": [

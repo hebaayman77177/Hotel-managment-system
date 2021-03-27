@@ -23,11 +23,13 @@ class ClientFactory extends Factory
      */
     public function definition()
     {
-        
+
+
         return [
             'name'              => $this->faker->name,
             'email'             => $this->faker->safeEmail,
-            'gender'            => $this->faker->randomElement(['Male','Female']),
+            'gender'            => $this->faker->randomElement(['Male', 'Female']),
+
             'mobile'            => $this->faker->phoneNumber,
             'country'           => $this->faker->country,
             'password'          => $this->faker->numerify('###-###-####'),
@@ -36,7 +38,8 @@ class ClientFactory extends Factory
             'deleted_at'        => null,
             'created_at'        => $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'id'                => $this->faker->unique(false, 1500)->numberBetween(1, 1000),
-            'avatar_img'        => $this->faker->image('public/storage',400,300,'Client') 
+            'avatar_img'        => $this->faker->image('public/storage', 400, 300, 'Client')
+
         ];
     }
 }

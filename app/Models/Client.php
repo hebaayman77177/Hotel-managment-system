@@ -8,7 +8,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
-class Client extends Model 
+
+class Client extends Model
 {
 
     use HasFactory, Notifiable;
@@ -16,7 +17,7 @@ class Client extends Model
     protected $table = 'clients';
     public $timestamps = true;
 
-    use SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $dates = ['deleted_at'];
     protected $fillable = array('is_approved', 'receptionist_id', 'name', 'email', 'mobile', 'country', 'avatar_img');
@@ -30,5 +31,4 @@ class Client extends Model
     {
         return $this->hasMany('App/Models\Reservation', 'id');
     }
-
 }
