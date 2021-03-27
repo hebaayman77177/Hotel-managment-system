@@ -26,7 +26,7 @@ class ReservationController extends Controller
      */
     public function create(Request $request, $room_number)
     {
-        return view('reservations.create', [
+        return view('clients.createReservation', [
             'room_number' => $room_number
         ]);
     }
@@ -73,6 +73,12 @@ class ReservationController extends Controller
     public function edit(Reservation $reservation)
     {
         //
+    }
+
+    public function clientreservations(Reservation $reservation)
+    {
+        $clientId = auth()->user()->id;
+        return  redirect()->route('clientreservations.index', ['client' => $clientId]);
     }
     /**
      * Show the form for editing the specified resource.

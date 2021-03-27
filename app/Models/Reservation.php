@@ -2,21 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Reservation extends Model 
+class Reservation extends Model
 {
-
+    use HasFactory, SoftDeletes;
     protected $table = 'reservations';
     public $timestamps = true;
-
-    use HasFactory,SoftDeletes;
-
     protected $dates = ['deleted_at'];
-    protected $guarded = ['id'];
-    // protected $fillable = array('is_approved','paid_price','room_number','client_id', 'accompany_number');
+
+    protected $fillable = array('is_approved', 'paid_price', 'accompany_number', 'room_number', 'client_id');
 
     public function client()
     {
@@ -27,5 +24,4 @@ class Reservation extends Model
     {
         return $this->belongsTo('App\Models\Room', 'number');
     }
-
 }

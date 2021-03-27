@@ -42,14 +42,13 @@ Route::post('/register/employee', [RegisterController::class, 'createEmployee'])
 Route::get('/register/employee', [RegisterController::class, 'showEmployeeRegisterForm']);
 Route::get('/login/employee', [LoginController::class, 'showEmployeeLoginForm']);
 Route::post('/login/employee', [LoginController::class, 'employeeLogin']);
-Route::group(['middleware' => 'auth:employee'], function () {
-    Route::view('/employee', 'employee');
-});
+
 Route::group(['middleware' => 'auth:admin'], function () {
     Route::view('/admin', 'admin');
 });
 Route::group(['middleware' => 'auth:client'], function () {
     Route::view('/client', 'client');
+    Route::get('clientreservations', [ReservationController::class, 'clientreservations']);
     Route::get('rooms', [RoomController::class, 'index'])->name('rooms.index');
     Route::get('reservations/rooms/{roomId}/create', [ReservationController::class, 'create'])->name('reservations.create');
     Route::post('reservations/payment/create', [PaymentController::class, 'create'])->name('payments.create');
@@ -59,23 +58,28 @@ Route::group(['middleware' => 'auth:client'], function () {
 
 
 // ************************* Receptionist Routes *************************** //
-Route::get('/receptionist', 'App\Http\Controllers\ReceptionistController@greeting')->name('receptionist.greeting');
+Route::group(['middleware' => 'auth:employee'], function () {
 
-Route::get('/receptionist/index', 'App\Http\Controllers\ReceptionistController@index')->name('receptionist.index');
+    Route::view('/employee', 'employee');
+    
+    Route::get('/receptionist', 'App\Http\Controllers\ReceptionistController@greeting')->name('receptionist.greeting');
 
-Route::get('/receptionist/update', 'App\Http\Controllers\ReceptionistController@update')->name('receptionist.update');
+    Route::get('/receptionist/index', 'App\Http\Controllers\ReceptionistController@index')->name('receptionist.index');
 
-Route::get('/receptionist/show', 'App\Http\Controllers\ReceptionistController@show')->name('receptionist.show');
+    Route::get('/receptionist/update', 'App\Http\Controllers\ReceptionistController@update')->name('receptionist.update');
 
-Route::get('/receptionist/reservedClients', 'App\Http\Controllers\ReceptionistController@reservedClients')->name('receptionist.reservedClients');
+    Route::get('/receptionist/show', 'App\Http\Controllers\ReceptionistController@show')->name('receptionist.show');
 
-Route::get('clients/{id}/approve', 'App\Http\Controllers\ReceptionistController@approveClient')->name('client.approve');
+    Route::get('/receptionist/reservedClients', 'App\Http\Controllers\ReceptionistController@reservedClients')->name('receptionist.reservedClients');
+
+    Route::get('clients/{id}/approve', 'App\Http\Controllers\ReceptionistController@approveClient')->name('client.approve');
+});
 
 
 // ************************* Admin Routes *************************** //
 Route::get('/admin/index', 'App\Http\Controllers\AdminController@index')->name('admin.index');
 
-              // ******* Manage Manger Routes *************** //
+// ******* Manage Manger Routes *************** //
 Route::get('/admin/manageManager/index', 'App\Http\Controllers\MangeManager@index')->name('manageManager.index');
 
 

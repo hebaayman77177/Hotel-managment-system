@@ -51,12 +51,12 @@ class PaymentController extends Controller
             // return redirect()->route('rooms.index');
         }
         // return redirect(clientreservations.index)->route('rooms.index');
-        return redirect('clientreservations.index')->route('clientreservations.index', ['roomId' => $clientId]);;
+        return redirect()->route('clientreservations.index', ['roomId' => $clientId]);
     }
 
     public function create(Request $request)
     {
-        return view('reservations.buy', [
+        return view('clients.buy', [
             'amount' => $request->amount,
             'room_number' => $request->room_number,
             'accompany_number' => $request->accompany_number

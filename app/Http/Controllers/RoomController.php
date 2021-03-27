@@ -46,7 +46,7 @@ class RoomController extends Controller
             ['data' =>  'action', 'name' => 'action', 'orderable' =>  false, 'searchable' =>  false],
         ]);
 
-        return view('rooms.index', compact('html'));
+        return view('clients.rooms', compact('html'));
 
         // return $dataTable->render('rooms.index');
     }
