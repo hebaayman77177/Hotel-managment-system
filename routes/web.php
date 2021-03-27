@@ -31,6 +31,14 @@ Route::get('/receptionist/reservedClients', 'App\Http\Controllers\ReceptionistCo
 Route::get('clients/{id}/approve', 'App\Http\Controllers\ReceptionistController@approveClient')->name('client.approve');
 
 
+// ************************* Admin Routes *************************** //
+Route::get('/admin/index', 'App\Http\Controllers\AdminController@index')->name('admin.index');
+
+              // ******* Manage Manger Routes *************** //
+Route::get('/admin/manageManager/index', 'App\Http\Controllers\MangeManager@index')->name('manageManager.index');
+
+
+
 
 
 

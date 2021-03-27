@@ -11471,7 +11471,7 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
   float: none;
   height: 100vh;
   left: 0;
-  position: fixed;
+ 
   top: 0;
 }
 

@@ -1,9 +1,10 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Employee extends Model 
 {
@@ -12,6 +13,8 @@ class Employee extends Model
     public $timestamps = true;
 
     use SoftDeletes;
+    use HasFactory, Notifiable;
+
 
     protected $dates = ['deleted_at'];
     protected $fillable = array('email', 'name', 'password', 'national_id', 'avatar_img', 'manager_id', 'role', 'is_banned');
