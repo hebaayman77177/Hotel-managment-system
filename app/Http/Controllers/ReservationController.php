@@ -24,10 +24,10 @@ class ReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request, $roomId)
+    public function create(Request $request, $room_number)
     {
         return view('reservations.create', [
-            'roomId' => $roomId
+            'room_number' => $room_number
         ]);
     }
 

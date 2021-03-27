@@ -13,19 +13,21 @@ class PaymentController extends Controller
     {
 
 
-        $validatedData = $request->validate([
-            'room_number' => ['required', 'exists:rooms,number'],
-            'accompany_number' => 'required',
-            'paid_price' => 'required',
-        ]);
+        // $validatedData = $request->validate([
+        //     'room_number' => ['required', 'exists:rooms,number'],
+        //     'accompany_number' => 'required',
+        //     'paid_price' => 'required',
+        // ]);
 
-        //check that accompany number is less than room capacity
+        $clientId = auth()->user()->id;
+        // check that accompany number is less than room capacity
         $room = Room::where('number', $request->room_number)->get();
-        if ($room->capacity < $request->accompany_number) {
+
+        if ($room[0]->capacity < $request->accompany_number) {
             return "accompany number is less than room capacity";
         }
 
-        // dd($request->amount);
+
         $stripe = Stripe::make('sk_test_51IWuBcLka668aF7limG1AyoNbWjuTzo8BYMfA6ua0wdlxefawzm3n8EwkH9MQSVDQznsm07IuIayROI5wMGYQQZa00GFoXxj2P', '2020-03-02'); // used Stripe secret key, not Publishable key
 
         $transactionResponse = $stripe->charges()->create([
@@ -34,22 +36,29 @@ class PaymentController extends Controller
             'source' => $request->stripeToken,
             'receipt_email' => "admin@email.com",
         ]);
-        dd($transactionResponse->status);
-        if ($transactionResponse->status === "succeeded") {
+
+        if ($transactionResponse['status'] === "succeeded") {
+
+            $reservation = new Reservation();
+            $reservation->client_id = $clientId;
+            $reservation->paid_price = $request->amount;
+            $reservation->accompany_number = $request->accompany_number;
+            $reservation->room_number = $request->room_number;
+            $reservation->save();
+
             //logic for saving in db
-            Reservation::create($validatedData);
+            Reservation::create($request->all());
             // return redirect()->route('rooms.index');
         }
-        // return redirect()->route('rooms.index');
-        return "succeeded";
+        // return redirect(clientreservations.index)->route('rooms.index');
+        return redirect('clientreservations.index')->route('clientreservations.index', ['roomId' => $clientId]);;
     }
 
     public function create(Request $request)
     {
-        // dd($request->amount);
         return view('reservations.buy', [
             'amount' => $request->amount,
-            'room_number' => $request->roomId,
+            'room_number' => $request->room_number,
             'accompany_number' => $request->accompany_number
         ]);
     }

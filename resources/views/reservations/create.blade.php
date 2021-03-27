@@ -19,7 +19,7 @@
             <label for="paid_price" class="form-label">Paid Price</label>
             <input type="text" class="form-control" name="amount"/>
         </div>
-        <input type="hidden" class="form-control" id="room_number" name="room_number">
+        <input type="hidden" class="form-control" id="room_number" name="room_number" value={{$room_number}}>
         <button type="submit" class="btn btn-success">Reserve</button>
     </form>
 

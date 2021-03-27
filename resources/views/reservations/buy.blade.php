@@ -469,7 +469,7 @@
             </div>
         @endif
         <script src="https://js.stripe.com/v3/"></script>
-        <form action="{{ route('payments.store') }}" method="post" id="payment-form">
+        <form method="post"  action="{{ route('payments.store') }}" id="payment-form">
             @csrf
             <div class="form-row">
                 <label for="card-element">Credit or debit card</label>
@@ -481,7 +481,7 @@
                 <div id="card-errors" role="alert"></div>
             </div>
             <input type="hidden" class="form-control" id="room_number" name="room_number" value={{ $room_number }}>
-            <input type="hidden" class="form-control" id="capcity" name="capcity" value={{ $accompany_number }}>
+            <input type="hidden" class="form-control" id="accompany_number" name="accompany_number" value={{ $accompany_number }}>
             <input type="hidden" class="form-control" id="amount" name="amount" value={{ $amount }}>
             <button id="st-btn">Submit Payment</button>
         </form>
