@@ -161,15 +161,10 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-<<<<<<< HEAD
         Yajra\DataTables\DataTablesServiceProvider::class,
         Yajra\DataTables\HtmlServiceProvider::class,
 
 
-=======
-        //yajra
-        Yajra\DataTables\DataTablesServiceProvider::class,
->>>>>>> 070b939c3290b4442cbda630b164684e938d646b
         /*
          * Package Service Providers...
          */
@@ -235,11 +230,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-<<<<<<< HEAD
         'DataTables' =>  Yajra\DataTables\DataTablesServiceProvider::class,
-=======
-        'DataTables'=>  Yajra\DataTables\DataTablesServiceProvider::class,
->>>>>>> 070b939c3290b4442cbda630b164684e938d646b
 
     ],
 

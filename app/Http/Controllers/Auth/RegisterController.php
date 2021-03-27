@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
-<<<<<<< HEAD
 use App\Models\Admin;
 use App\Models\Client;
 use App\Models\Employee;
@@ -13,11 +12,6 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
-=======
-use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
->>>>>>> 070b939c3290b4442cbda630b164684e938d646b
 
 class RegisterController extends Controller
 {
@@ -49,12 +43,9 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
-<<<<<<< HEAD
         $this->middleware('guest:admin');
         $this->middleware('guest:client');
         $this->middleware('guest:employee');
-=======
->>>>>>> 070b939c3290b4442cbda630b164684e938d646b
     }
 
     /**
@@ -71,7 +62,6 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
-<<<<<<< HEAD
     protected function adminValidator(array $data)
     {
         return Validator::make($data, [
@@ -194,21 +184,5 @@ class RegisterController extends Controller
             'receptionist_id' => 1
         ]);
         return redirect()->intended('login/client');
-=======
-
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
->>>>>>> 070b939c3290b4442cbda630b164684e938d646b
     }
 }

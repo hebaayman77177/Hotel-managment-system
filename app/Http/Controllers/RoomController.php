@@ -32,31 +32,21 @@ class RoomController extends Controller
 
 
         if (request()->ajax()) {
-<<<<<<< HEAD
             return DataTables::of($students)->addColumn('action', function ($row) {
                 $btn =  "<a href='reservations/rooms/{$row->number}/create' class='edit btn btn-info btn-sm'>View</a>";
                 return $btn;
             })
                 ->rawColumns(['action'])
                 ->toJson();
-=======
-            return DataTables::of($students)->toJson();
->>>>>>> 070b939c3290b4442cbda630b164684e938d646b
         }
         $html = $builder->columns([
             ['data' => 'number', 'name' => 'number', 'title' => 'Number'],
             ['data' => 'capacity', 'name' => 'capacity', 'title' => 'capacity'],
             ['data' => 'price', 'name' => 'price', 'title' => 'price'],
-<<<<<<< HEAD
             ['data' =>  'action', 'name' => 'action', 'orderable' =>  false, 'searchable' =>  false],
         ]);
 
         return view('clients.rooms', compact('html'));
-=======
-        ]);
-
-        return view('rooms.index', compact('html'));
->>>>>>> 070b939c3290b4442cbda630b164684e938d646b
 
         // return $dataTable->render('rooms.index');
     }

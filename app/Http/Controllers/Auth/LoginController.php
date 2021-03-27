@@ -5,11 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-<<<<<<< HEAD
 use Illuminate\Http\Request;
 use Auth;
-=======
->>>>>>> 070b939c3290b4442cbda630b164684e938d646b
 
 class LoginController extends Controller
 {
@@ -41,7 +38,6 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-<<<<<<< HEAD
         $this->middleware('guest:admin')->except('logout');
         $this->middleware('guest:client')->except('logout');
         $this->middleware('guest:employee')->except('logout');
@@ -100,7 +96,5 @@ class LoginController extends Controller
     public function showEmployeeLoginForm()
     {
         return view('auth.login', ['url' => 'employee']);
-=======
->>>>>>> 070b939c3290b4442cbda630b164684e938d646b
     }
 }
