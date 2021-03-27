@@ -15,7 +15,8 @@ class Reservation extends Model
     use HasFactory,SoftDeletes;
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('client_id', 'room_number', 'accompany_number', 'paid_price', 'from_date', 'to_date', 'is_approved');
+    protected $guarded = ['id'];
+    // protected $fillable = array('is_approved','paid_price','room_number','client_id', 'accompany_number');
 
     public function client()
     {
