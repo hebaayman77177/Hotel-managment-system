@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\DataTables\ClientTable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -23,20 +24,20 @@ class ReceptionistController extends Controller
                 'name',
                 'id',
                 'email'
-            )->where('is_approved', '=', 1);
+            )->where('is_approved', '=', 0);
 
         if (request()->ajax()) {
             return DataTables::of($students)->addColumn('action', function ($row) {
-            return '<a href="'.route('client.approve',$row->id).'" class="btn btn-xs btn-primary"> Edit</a>';
+                return '<a href="' . route('client.approve', $row->id) . '" class="btn btn-xs btn-primary"> Approve</a>';
             })
-            ->toJson();
+                ->toJson();
         }
 
         $html = $builder->columns([
             ['data' => 'name', 'name' => 'name', 'title' => 'Name'],
             ['data' => 'email', 'name' => 'email', 'title' => 'Email'],
             ['data' => 'id', 'name' => 'id', 'title' => 'Id'],
-            ['data' =>  'action', 'name' => 'action','title'=>'Approve', 'orderable' =>  false, 'searchable' =>  false],
+            ['data' =>  'action', 'name' => 'action', 'title' => 'Approve', 'orderable' =>  false, 'searchable' =>  false],
 
         ]);
 
@@ -45,7 +46,7 @@ class ReceptionistController extends Controller
 
 
     //​ Show  Reservations  Data For Each Client
-    public function show(Request $request,Builder $builder)
+    public function show(Request $request, Builder $builder)
     {
         $students = \DB::table('reservations')
             ->select(
@@ -55,8 +56,8 @@ class ReceptionistController extends Controller
                 'country',
                 'gender',
                 'clients.name'
-            )->join('clients','reservations.client_id','=','client.id')
-            ->where(['clients.receptionist_id','=' ,'$request.receptionist']);
+            )->join('clients', 'reservations.client_id', '=', 'client.id')
+            ->where(['clients.receptionist_id', '=', '$request.receptionist']);
 
         if (request()->ajax()) {
             return DataTables::of($students)->toJson();
@@ -66,9 +67,9 @@ class ReceptionistController extends Controller
             ['data' => 'clients.name', 'name' => 'clients.name', 'title' => 'Client'],
             ['data' => 'accompany_number', 'name' => 'accompany_number', 'title' => 'Accompany Number'],
             ['data' => 'room_number', 'name' => 'room_number', 'title' => 'Room Number'],
-            ['data' =>  'paid_price', 'name' => 'paid_price','title'=>'Paid Price'],
-            ['data' =>  'country', 'name' => 'country','title'=>'Country'],
-            ['data' =>  'gender', 'name' => 'gender','title'=>'Gender'],
+            ['data' =>  'paid_price', 'name' => 'paid_price', 'title' => 'Paid Price'],
+            ['data' =>  'country', 'name' => 'country', 'title' => 'Country'],
+            ['data' =>  'gender', 'name' => 'gender', 'title' => 'Gender'],
         ]);
 
         return view('receptionist.show', compact('html'));
@@ -78,6 +79,7 @@ class ReceptionistController extends Controller
     //Reservation Client
     public function reservedClients(Builder $builder)
     {
+        $receptionistId = auth()->user()->id;
         $students = \DB::table('clients')
             ->select(
                 'name',
@@ -85,7 +87,7 @@ class ReceptionistController extends Controller
                 'mobile',
                 'country',
                 'gender'
-            )->where(['clients.recePtionist_id','=' ,'$request.receptionist']);
+            )->where(['receptionist_id', '=', $receptionistId]);
 
         if (request()->ajax()) {
             return DataTables::of($students)->toJson();
@@ -94,8 +96,8 @@ class ReceptionistController extends Controller
             ['data' => 'name', 'name' => 'clients.name', 'title' => 'Name'],
             ['data' => 'email', 'name' => 'email', 'title' => 'Email'],
             ['data' => 'mobile', 'name' => 'mobile', 'title' => 'Mobile'],
-            ['data' =>  'country', 'name' => 'country','title'=>'Country'],
-            ['data' =>  'gender', 'name' => 'gender','title'=>'Gender'],
+            ['data' =>  'country', 'name' => 'country', 'title' => 'Country'],
+            ['data' =>  'gender', 'name' => 'gender', 'title' => 'Gender'],
         ]);
 
         return view('receptionist.reservedClients', compact('html'));
@@ -105,15 +107,18 @@ class ReceptionistController extends Controller
 
 
     //Receptionist Approve Client
-    public function approveClient($id, Request $request){
-       
+    public function approveClient($id)
+    {
+        $receptionistId = auth()->user()->id;
         $clientToUpdate  = Client::findOrFail($id);
-            $clientToUpdate->update([
-                'receptionist_id'=>$request->currentLogedin,
-            ]);
-        
+
+        $clientToUpdate->update([
+            'receptionist_id' => $receptionistId,
+            'is_approved' => 1
+        ]);
+
         // $clientToUpdate->fill()->save();
 
-       return redirect()->route('receptionist.index');
+        return redirect()->route('receptionist.index');
     }
 }

@@ -22,7 +22,7 @@ class Client extends Authenticatable
 
 
     protected $dates = ['deleted_at'];
-    protected $fillable = array('is_approved', 'password', 'receptionist_id', 'name', 'email', 'mobile', 'country', 'avatar_img');
+    protected $fillable = array('is_approved', 'password', 'receptionist_id', 'name', 'email', 'mobile', 'country', 'avatar_img','gender');
 
     public function approvedReceptionist()
     {

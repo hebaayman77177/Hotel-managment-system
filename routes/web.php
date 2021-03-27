@@ -61,7 +61,7 @@ Route::group(['middleware' => 'auth:client'], function () {
 Route::group(['middleware' => 'auth:employee'], function () {
 
     Route::view('/employee', 'employee');
-    
+
     Route::get('/receptionist', 'App\Http\Controllers\ReceptionistController@greeting')->name('receptionist.greeting');
 
     Route::get('/receptionist/index', 'App\Http\Controllers\ReceptionistController@index')->name('receptionist.index');
@@ -72,8 +72,10 @@ Route::group(['middleware' => 'auth:employee'], function () {
 
     Route::get('/receptionist/reservedClients', 'App\Http\Controllers\ReceptionistController@reservedClients')->name('receptionist.reservedClients');
 
-    Route::get('clients/{id}/approve', 'App\Http\Controllers\ReceptionistController@approveClient')->name('client.approve');
+    Route::get('/receptionist/clients/{id}/approve', 'App\Http\Controllers\ReceptionistController@approveClient')->name('client.approve');
 });
+// Route::get('clients/{id}/approve', 'App\Http\Controllers\ReceptionistController@approveClient')->name('client.approve');
+
 
 
 // ************************* Admin Routes *************************** //
