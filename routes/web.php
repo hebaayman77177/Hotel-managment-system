@@ -36,7 +36,20 @@ Route::get('/admin/index', 'App\Http\Controllers\AdminController@index')->name('
 
               // ******* Manage Manger Routes *************** //
 Route::get('/admin/manageManager/index', 'App\Http\Controllers\MangeManager@index')->name('manageManager.index');
+Route::get('/admin/manageManager/show/{id}', 'App\Http\Controllers\MangeManager@show')->name('manageManager.show');
+Route::get('/admin/manageManager/{id}/edit', 'App\Http\Controllers\MangeManager@edit')->name('manageManager.edit');
+Route::put('/admin/manageManager/{id}', 'App\Http\Controllers\MangeManager@update')->name('manageManager.update');
+Route::delete('/admin/manageManager/{id}', 'App\Http\Controllers\MangeManager@delete')->name('manageManager.destroy');
 
+            // ******* Manage Manger Routes *************** //
+  Route::get('/admin/manageClient/index', 'App\Http\Controllers\ManageClientController@index')->name('manageClient.index');
+  Route::get('/admin/manageClient/show/{id}', 'App\Http\Controllers\ManageClientController@show')->name('manageClient.show');
+  Route::get('/admin/manageClient/{id}/edit', 'App\Http\Controllers\ManageClientController@edit')->name('manageClient.edit');
+  Route::put('/admin/manageClient/{id}', 'App\Http\Controllers\ManageClientController@update')->name('manageClient.update');
+  Route::delete('/admin/manageClient/{id}', 'App\Http\Controllers\ManageClientController@delete')->name('manageClient.destroy');
+              
+              
+              
 
 
 

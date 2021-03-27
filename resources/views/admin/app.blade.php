@@ -60,7 +60,7 @@
                with font-awesome or any other icon font library -->
         
           <li class="nav-item">
-            <a href="/receptionist/index" class="nav-link">
+            <a href="/admin/manageManager/index" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Manage Managers
@@ -68,7 +68,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="/receptionist/show" class="nav-link">
+            <a href="/admin/manageClient/index" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Manage Receptionist
@@ -76,7 +76,7 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="/receptionist/reservedClients" class="nav-link">
+            <a href="/admin/manageClient/index" class="nav-link">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 Manage Clients

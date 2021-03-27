@@ -8,7 +8,7 @@
         <!-- /.card-header -->
         <div class="card-body">
                <?php echo $html->table([
-                 'class'=> 'dataTable table-striped table-hover table-bordered'
+                 'class'=> 'dataTable table-striped table-hover '
                ]); ?>
 
         </div>
