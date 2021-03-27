@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+    color: wheat;
+}
+
+.breadcrumb-bar {
+    background-color: #393b3d;
+    padding: 10px 0;
+}
+
+.align-items-center {
+   
+    align-items: center!important;
+}
+
+.breadcrumb-bar h2{
+    color:#ffc107 ;
+    font-family: 'Oswald', sans-serif;
+    margin-left: 20px;
+    
+}
+
+
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 45px 0 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+i.fa{
+    font-size: 1.5rem;
+    transition: all .3s ease-in-out;
+}
+
+i.fa:hover {
+    transform: scale(1.2);
+    color: hotpink;
+}
+
+.card {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background-color: rgb(142 142 142 / 10%);
+    border: 1px solid;
+    border-color: #fff8 transparent transparent #fff8;
+    border-radius: 8px;
+    box-shadow: 1em 1em 0.5em #0008;
+    transform-style: preserve-3d;
+    width: 100%;
+    max-width: 390px;
+    cursor: pointer;
+    margin:130px auto ;
+    height: 380px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card .user-img {
+    background-image: url("");
+    background-size: contain;
+    width: 160px;
+    border-radius: 50%;
+    height: 160px;
+    margin: auto;
+    border: 1px solid white;
+    margin-top: -135px;
+}
+
+.card .front,
+.card .back {
+  backface-visibility: hidden;
+  padding: 3rem;
+  height: 100%;
+  backdrop-filter: blur(0.2em);
+}
+
+.card .back {
+  position: absolute;
+  top: 0;
+  transform: rotateY(180deg);
+}
+
+.card .back .user-img {
+    background-image: url("https://www.antonella-testa.com/images/blog-desktop.jpg");
+}
+
+.front h2{
+    font-family:'Oswald', sans-serif ;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.front p{
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.card .clickback {
+    margin-top: 30px;
+}
+
+.card .clickback a{
+    padding: 10px;
+    background-color: #ffc107;
+    color: black;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+/* Edit Function */
+
+*,:after,:before{box-sizing:border-box}
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
+
+.login-wrap{
+	width:100%;
+	margin:auto;
+	margin-bottom: 100px;
+	max-width:525px;
+	min-height:540px;
+	margin-top: 50px;
+	position:relative;
+	background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+.login-html{
+	width:100%;
+	height:100%;
+	position:absolute;
+	padding:40px 70px 90px 70px;
+	background:rgba(25, 25, 26, 0.9);
+}
+
+.login-html .sign-up-htm{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position:absolute;
+	backface-visibility:hidden;
+	transition:all .4s linear;
+}
+
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button{
+	text-transform:uppercase;
+}
+.login-form .group .label{
+	font-family: 'Oswald', sans-serif;
+}
+.login-html .tab{
+	font-size:22px;
+	margin-right:15px;
+	padding-bottom:5px;
+	margin:0 15px 10px 0;
+	display:inline-block;
+	border-bottom:2px solid transparent;
+}
+.login-html .sign-up{
+	color:#fff;
+	border-color:#ffc107;
+}
+
+.login-form{
+	min-height:330px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+	
+}
+.login-form .group{
+	margin-bottom:15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+	width:100%;
+	color:#fff;
+	display:block;
+}
+.login-form .group .input,
+.login-form .group .button
+{
+	border:none;
+	padding:15px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+	outline: none;
+}
+.login-form .group input[data-type="password"]{
+	-webkit-text-security:circle;
+}
+.login-form .group .label{
+	color:#aaa;
+	font-size:12px;
+}
+.login-form .group .button,
+.login-form .group a{
+	background:#ffc107;
+}
+
+
+
+.foot-lnk{
+	text-align:center;
+}
+
+.tab-2{
+	color: #ffc107;
+}
+
+.login-html h2{
+	margin-bottom: 20px;
+	font-family: 'Oswald', sans-serif;
+}
+
+.login-form .group input[type="submit"],
+.login-form .group a{
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 15px;
+	width: 100px;
+	display: inline-block;
+	border-radius: 15px;
+}
+
+.login-form .group input[type="submit"]:nth-child(1){
+    margin-left: 100px;
+}
