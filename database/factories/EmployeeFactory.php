@@ -4,8 +4,6 @@ namespace Database\Factories;
 
 use App\Models\Employee;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
-
 
 class EmployeeFactory extends Factory
 {
@@ -27,16 +25,9 @@ class EmployeeFactory extends Factory
             'name'              => $this->faker->name,
             'email'             => $this->faker->safeEmail,
             'password'          => $this->faker->numerify('###-###-####'),
-            'is_banned'         => $this->faker->boolean(),
-            'updated_at'        => $this->faker->date($format = 'Y-m-d', $max = 'now'),
-            'deleted_at'        => null,
-            'created_at'        => $this->faker->date($format = 'Y-m-d', $max = 'now'),
-            'id'                => $this->faker->unique(false, 1500)->numberBetween(1, 1000),
-            'avatar_img'        => $this->faker->image('public/storage',400,300,'Client'),
-            'role'              => $this->faker->words,
-            'manager_id'        => null,
-            'national_id'        => $this->faker->creditCardNumber,
-
+            'is_banned'       => $this->faker->boolean(),
+            'avatar_img'        => $this->faker->image('public/storage', 400, 300, 'Client'),
+            'national_id'    => $this->faker->sentence(14),
         ];
     }
 }
